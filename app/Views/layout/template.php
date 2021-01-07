@@ -38,12 +38,12 @@
         <div class="col-md-2 bg-dark mt-2 pr-3 pt-4">
             <ul class="nav flex-column flex-around ml-3 mb-4">
                 <li class="nav-item">
-                    <a href="?" class="nav-link active"><i class="fas fa-tachometer-alt mr-2"></i>
+                    <a href="<?= base_url() ?>" class="nav-link active"><i class="fas fa-tachometer-alt mr-2"></i>
                         Dashboard</a>
                     <hr class="bg-secondary">
                 </li>
                 <li class="nav-item">
-                    <a href="?halaman=siswa" class="nav-link"><i class="fas fa-user-graduate mr-2"></i> Daftar
+                    <a href="<?= base_url('/Siswa') ?>" class="nav-link"><i class="fas fa-user-graduate mr-2"></i> Daftar
                         Siswa</a>
                     <hr class="bg-secondary">
                 </li>

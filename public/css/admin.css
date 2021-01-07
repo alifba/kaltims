@@ -35,3 +35,9 @@ a.nav-link:hover {
     width: 60%;
     display: flex;
 }
+
+.pointer:hover {
+    cursor: pointer;
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, .5);
+    transform: translate(-1px) scale(1.001);
+}
