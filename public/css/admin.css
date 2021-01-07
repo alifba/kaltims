@@ -1,0 +1,37 @@
+a.nav-link {
+    color: white;
+}
+
+a.nav-link:hover {
+    background-color: grey;
+}
+
+.display-4 {
+    font-weight: bold;
+}
+
+.card-body-icon {
+    position: absolute;
+    z-index: 0;
+    top: 25px;
+    right: 4px;
+    opacity: 0.4;
+    font-size: 90px;
+}
+
+.table tbody td i {
+    margin-left: 15px;
+    transform: scale(1.2);
+
+}
+
+/* ini untuk bagian form */
+.flexbox {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flexbox form {
+    width: 60%;
+    display: flex;
+}
