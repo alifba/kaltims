@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/admin.css">
 </head>
 
-<body>
+<body style="overflow: hidden;">
 
     <!-- membuat navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-warning fixed-top">

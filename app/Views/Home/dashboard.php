@@ -8,7 +8,7 @@
 <!-- membuat card -->
 <div class="row text-white mb-4">
 
-    <div class="card bg-dark ml-3 pointer" style="width: 20rem;">
+    <div class="card bg-dark ml-3 pointer siswa" style="width: 20rem;">
         <div class="card-body">
             <div class="card-body-icon"><i class="fas fa-user-graduate mr-2"></i></div>
             <h5 class="card-title">DAFTAR SISWA</h5>
