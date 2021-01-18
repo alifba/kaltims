@@ -35,6 +35,8 @@ $routes->get('/', 'Home::index');
 
 $routes->get('/Siswa', 'Siswa::index');
 
+$routes->get('/Siswa', 'Siswa::index/$1/$2/$3');
+
 /**
  * --------------------------------------------------------------------
  * Additional Routing
