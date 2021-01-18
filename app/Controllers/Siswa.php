@@ -15,6 +15,7 @@ use App\Models\siswaModel;
 use App\Models\siswalanjutModel;
 use App\Models\statusModel;
 use App\Models\tahunajarModel;
+use mysqli;
 
 class Siswa extends BaseController
 {
@@ -49,7 +50,7 @@ class Siswa extends BaseController
         $this->tahunajar = new tahunajarModel();
     }
 
-    public function index($tahun = null, $jurusan = null, $kelas = null)
+    public function index()
     {
         // @$tahun = $_POST['tahun'];
         // @$jurusan = $_POST['jurusan'];
@@ -60,6 +61,20 @@ class Siswa extends BaseController
         $kelas = $this->kelas->findAll();
         $siswa = $this->siswa->findAll();
 
+        if (isset($tahun)) {
+            echo 'helo';
+        }
+
+        // if (isset($_POST['submitCari'])) {
+        //     $cari = $_POST['cari'];
+        //     $db = \Config\Database::connect();
+        //     $query   = $db->query("SELECT * FROM siswa WHERE NM_SISWA LIKE '%$cari%'");
+
+        //     $siswa = $query->getResultArray();
+        // } else {
+        //     $siswa = $this->siswa->findAll();
+        // }
+
         $data = [
             'siswa' => $siswa,
             'kelas' => $kelas,
@@ -68,6 +83,18 @@ class Siswa extends BaseController
             'title' => 'Daftar siswa'
         ];
         return view('Siswa/index', $data);
+    }
+
+    public function coba()
+    {
+        $angkatan = $this->angkatan->findAll();
+
+
+        $data = [
+            'angkatan' => $angkatan,
+            'title' => 'coba'
+        ];
+        return view('coba', $data);
     }
 
     //--------------------------------------------------------------------

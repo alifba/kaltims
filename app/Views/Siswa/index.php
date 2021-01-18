@@ -21,6 +21,10 @@
             </select>
         </div>
     </div>
+
+    <?php
+    echo @$tahunBaru;
+    ?>
 </form>
 
 
@@ -52,9 +56,6 @@
     <div class="row mb-4">
         <div class="col-sm-5">
             <h5><i class="fas fa-angle-right"></i> Kelas :</h5>
-            <?php if (isset($_GET['tahun'])) {
-                echo @$_GET['tahun'];
-            } ?>
         </div>
         <div class="col-sm-7">
             <select class="form-control " id="kelas">
