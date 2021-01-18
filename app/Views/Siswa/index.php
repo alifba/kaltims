@@ -4,70 +4,80 @@
 <h3><i class="fas fa-user-graduate mr-2"></i> DAFTAR SISWA</h3>
 <hr>
 
-<!-- membuat inputan dan tambah data -->
+<!-- form tahun ajar -->
+<form action="" method="POST">
+    <div class="row mb-1">
 
-<div class="row mb-1">
-    <div class="col-sm-5">
-        <h5><i class="fas fa-angle-right"></i> Tahun Ajaran :</h5>
-    </div>
-    <div class="col-sm-7">
-        <form action="" method="POST">
-            <select class="form-control">
+
+        <div class="col-sm-5">
+            <h5><i class="fas fa-angle-right"></i> Tahun Ajaran :</h5>
+        </div>
+        <div class="col-sm-7">
+            <select class="form-control d-inline" style="width: 90%;">
                 <option>Pilih Tahun Ajaran</option>
                 <?php foreach ($tahunajar as $a) : ?>
-                    <option value="<?= $a['NM_THNAJAR']; ?>" name="Model"><?= $a['NM_THNAJAR']; ?></option>
+                    <option type='submit' value="<?= $a['ID_THNAJAR']; ?>" name="ID_THNAJAR"><?= $a['NM_THNAJAR']; ?></option>
                 <?php endforeach; ?>
             </select>
-        </form>
-    </div>
-</div>
-<div class="row mb-1">
-    <div class="col-sm-5">
-        <h5><i class="fas fa-angle-right"></i> Jurusan :</h5>
-    </div>
-    <div class="col-sm-7">
-        <form action="" method="POST">
-            <select class="form-control">
-                <option>Pilih Jurusan</option>
-                <?php foreach ($jurusan as $j) : ?>
-                    <option><?= $j['NM_JURUSAN']; ?></option>
-                <?php endforeach; ?>
-            </select>
-        </form>
-    </div>
-</div>
-<div class="row mb-1">
-    <div class="col-sm-5">
-        <h5><i class="fas fa-angle-right"></i> Kelas :</h5>
-    </div>
-    <div class="col-sm-7">
-        <form action="" method="POST">
-            <select class="form-control">
-                <option>Pilih Kelas</option>
-                <?php foreach ($kelas as $k) : ?>
-                    <option value="<?= $k['NM_KELAS']; ?>"><?= $k['NM_KELAS']; ?></option>
-                <?php endforeach; ?>
-            </select>
-        </form>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-5"></div>
-    <div class="col-sm-7">
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Masukkan Keyword" aria-label="Recipient's username" aria-describedby="button-addon2">
-            <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Cari</button>
+            <div class="input-group-append d-inline" style="width: 10%;">
+                <button class="btn btn-outline-secondary" type="submit" id="button-addon2" name="tahun">Cari</button>
             </div>
         </div>
     </div>
-</div>
+</form>
+
+
+
+<!--  -->
+
+<!-- form jurusan -->
+<form action="" method="POST">
+    <div class="row mb-1">
+
+
+        <div class="col-sm-5">
+            <h5><i class="fas fa-angle-right"></i> Jurusan :</h5>
+        </div>
+        <div class="col-sm-7">
+            <select class="form-control d-inline" style="width: 90%;">
+                <option>Pilih Jurusan</option>
+                <?php foreach ($jurusan as $j) : ?>
+                    <option value="<?= $j['ID_JURUSAN']; ?>" name="ID_JURUSAN"><?= $j['NM_JURUSAN']; ?></option>
+                <?php endforeach; ?>
+            </select>
+            <div class="input-group-append d-inline" style="width: 10%;">
+                <button class="btn btn-outline-secondary" type="submit" id="button-addon2" name="jurusan">Cari</button>
+            </div>
+        </div>
+    </div>
+</form>
+<!--  -->
+
+<!-- form kelas -->
+<form action="" method="POST">
+    <div class="row mb-4">
+        <div class="col-sm-5">
+            <h5><i class="fas fa-angle-right"></i> Kelas :</h5>
+        </div>
+        <div class="col-sm-7">
+            <select class="form-control d-inline" style="width: 90%;">
+                <option>Pilih Kelas</option>
+                <?php foreach ($kelas as $k) : ?>
+                    <option value="<?= $k['ID_JURUSAN']; ?>" name="ID_JURUSAN"><?= $k['NM_KELAS']; ?></option>
+                <?php endforeach; ?>
+            </select>
+            <div class="input-group-append d-inline" style="width: 10%;">
+                <button class="btn btn-outline-secondary" type="submit" id="button-addon2" name="kelas">Cari</button>
+            </div>
+        </div>
+    </div>
+</form>
+<!--  -->
 
 
 
 <!-- membuat table -->
-<div style="height: 300px;overflow:scroll;">
+<div style="height: 315px;overflow:scroll;">
     <table class="table" style="height:100px;overflow:hidden;">
         <thead class="thead-dark">
             <tr>
