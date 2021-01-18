@@ -6,3 +6,15 @@ $(function() {
         window.location.href= '/Siswa';
     });
 });
+
+// $(document).ready(function(){
+//     $('#tahun').change(function(){
+//         alert($('#tahun').val());
+//     });
+//     $('#jurusan').change(function(){
+//         alert($('#jurusan').val());
+//     });
+//     $('#kelas').change(function(){
+//         alert($('#kelas').val());
+//     });
+// });
