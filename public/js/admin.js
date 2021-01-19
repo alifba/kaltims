@@ -1,20 +1,30 @@
 $(function() {
     $('[data-toggle="tooltip"]').tooltip();
+});
 
-    // redirect halaman daftar siswa
+$(document).ready(function(){
+     // redirect halaman daftar siswa
     $('.siswa').click(function(){
         window.location.href= '/Siswa';
     });
-});
 
-// $(document).ready(function(){
-//     $('#tahun').change(function(){
-//         alert($('#tahun').val());
-//     });
-//     $('#jurusan').change(function(){
-//         alert($('#jurusan').val());
-//     });
-//     $('#kelas').change(function(){
-//         alert($('#kelas').val());
-//     });
-// });
+    // tahun
+    $('#tahun').change(function(tahun = null, jurusan = null, kelas = null){
+        tahun = $('#tahun').val();
+        window.location.href= '/Siswa/' +tahun+'/'+jurusan+'/'+kelas;
+    });
+
+    // jurusan
+    $('#jurusan').change(function(tahun = null, jurusan = null, kelas = null){
+        tahun = null
+        jurusan = $('#jurusan').val();
+        window.location.href= '/Siswa/' +tahun+'/'+jurusan+'/'+kelas;
+    });
+
+    // kelas
+    $('#kelas').change(function(tahun = 0, jurusan = null, kelas = null){
+        tahun = null
+        kelas = $('#kelas').val();
+        window.location.href= '/Siswa/' +tahun+'/'+jurusan+'/'+kelas;
+    });
+});

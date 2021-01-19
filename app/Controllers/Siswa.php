@@ -50,51 +50,25 @@ class Siswa extends BaseController
         $this->tahunajar = new tahunajarModel();
     }
 
-    public function index()
+    public function index($itahun = null, $ijurusan = null, $ikelas = null)
     {
-        // @$tahun = $_POST['tahun'];
-        // @$jurusan = $_POST['jurusan'];
-        // @$kelas = $_POST['kelas'];
 
         $tahunajar = $this->tahunajar->findAll();
         $jurusan = $this->jurusan->findAll();
         $kelas = $this->kelas->findAll();
         $siswa = $this->siswa->findAll();
 
-        if (isset($tahun)) {
-            echo 'helo';
-        }
-
-        // if (isset($_POST['submitCari'])) {
-        //     $cari = $_POST['cari'];
-        //     $db = \Config\Database::connect();
-        //     $query   = $db->query("SELECT * FROM siswa WHERE NM_SISWA LIKE '%$cari%'");
-
-        //     $siswa = $query->getResultArray();
-        // } else {
-        //     $siswa = $this->siswa->findAll();
-        // }
-
         $data = [
             'siswa' => $siswa,
             'kelas' => $kelas,
             'jurusan' => $jurusan,
             'tahunajar' => $tahunajar,
+            'itahun' => $itahun,
+            'ijurusan' => $ijurusan,
+            'ikelas' => $ikelas,
             'title' => 'Daftar siswa'
         ];
         return view('Siswa/index', $data);
-    }
-
-    public function coba()
-    {
-        $angkatan = $this->angkatan->findAll();
-
-
-        $data = [
-            'angkatan' => $angkatan,
-            'title' => 'coba'
-        ];
-        return view('coba', $data);
     }
 
     //--------------------------------------------------------------------
