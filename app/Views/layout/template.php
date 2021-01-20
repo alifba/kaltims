@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="fontawesome-free-5.15.1-web/css/all.min.css">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/admin.css">
+
+    <script src="/js/jquery.lama.js"></script>
+    <script src="/js/admin.js"></script>
 </head>
 
 <body style="overflow: hidden;">
@@ -81,10 +84,8 @@
 
         </div>
     </div>
-    <script src="/js/jquery.lama.js"></script>
     <script src="/js/popper.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/admin.js"></script>
 </body>
 
 </html>

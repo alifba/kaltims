@@ -50,7 +50,7 @@ class Siswa extends BaseController
         $this->tahunajar = new tahunajarModel();
     }
 
-    public function index($itahun = null, $ijurusan = null, $ikelas = null)
+    public function index()
     {
 
         $tahunajar = $this->tahunajar->findAll();
@@ -63,12 +63,63 @@ class Siswa extends BaseController
             'kelas' => $kelas,
             'jurusan' => $jurusan,
             'tahunajar' => $tahunajar,
-            'itahun' => $itahun,
-            'ijurusan' => $ijurusan,
-            'ikelas' => $ikelas,
             'title' => 'Daftar siswa'
         ];
         return view('Siswa/index', $data);
+    }
+
+    public function ajax($itahun = null)
+    {
+        $tahunajar = $this->tahunajar->findAll();
+        $jurusan = $this->jurusan->findAll();
+        $kelas = $this->kelas->findAll();
+        $siswa = $this->siswa->findAll();
+        $data = [
+            'siswa' => $siswa,
+            'kelas' => $kelas,
+            'jurusan' => $jurusan,
+            'tahunajar' => $tahunajar,
+            'itahun' => $itahun
+        ];
+
+        return view('Siswa/ajax', $data);
+    }
+
+    public function ajax2($itahun = null, $ijurusan = null)
+    {
+        $tahunajar = $this->tahunajar->findAll();
+        $jurusan = $this->jurusan->findAll();
+        $kelas = $this->kelas->findAll();
+        $siswa = $this->siswa->findAll();
+        $data = [
+            'siswa' => $siswa,
+            'kelas' => $kelas,
+            'jurusan' => $jurusan,
+            'tahunajar' => $tahunajar,
+            'itahun' => $itahun,
+            'ijurusan' => $ijurusan
+        ];
+
+        return view('Siswa/ajax2', $data);
+    }
+
+    public function ajax3($itahun = null, $ijurusan = null, $ikelas = null)
+    {
+        $tahunajar = $this->tahunajar->findAll();
+        $jurusan = $this->jurusan->findAll();
+        $kelas = $this->kelas->findAll();
+        $siswa = $this->siswa->findAll();
+        $data = [
+            'siswa' => $siswa,
+            'kelas' => $kelas,
+            'jurusan' => $jurusan,
+            'tahunajar' => $tahunajar,
+            'itahun' => $itahun,
+            'ijurusan' => $ijurusan,
+            'ikelas' => $ikelas
+        ];
+
+        return view('Siswa/ajax3', $data);
     }
 
     //--------------------------------------------------------------------

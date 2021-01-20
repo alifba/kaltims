@@ -8,23 +8,27 @@ $(document).ready(function(){
         window.location.href= '/Siswa';
     });
 
+    tahun = 'null';
+    kelas = 'null';
+    jurusan = 'null';
+
     // tahun
-    $('#tahun').change(function(tahun = null, jurusan = null, kelas = null){
+    $('#tahun').on('change', function(){
+        // window.location.href= '/Siswa';
         tahun = $('#tahun').val();
-        window.location.href= '/Siswa/' +tahun+'/'+jurusan+'/'+kelas;
+        
+        $('.tahun').load('/Siswa/ajax/'+tahun);
     });
 
     // jurusan
-    $('#jurusan').change(function(tahun = null, jurusan = null, kelas = null){
-        tahun = null
+    $('#jurusan').change(function(){
         jurusan = $('#jurusan').val();
-        window.location.href= '/Siswa/' +tahun+'/'+jurusan+'/'+kelas;
+        $('.jurusan').load('/Siswa/ajax2/'+tahun+'/'+jurusan);
     });
 
     // kelas
-    $('#kelas').change(function(tahun = 0, jurusan = null, kelas = null){
-        tahun = null
+    $('#kelas').change(function(){
         kelas = $('#kelas').val();
-        window.location.href= '/Siswa/' +tahun+'/'+jurusan+'/'+kelas;
+        $('.kelas').load('/Siswa/ajax3/'+tahun+'/'+jurusan+'/'+kelas);
     });
 });
