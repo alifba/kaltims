@@ -63,7 +63,7 @@
                     <select class="form-control " id="kelas" name="kelas">
                         <option>Pilih kelas</option>
                         <?php foreach ($kelas as $k) : ?>
-                            <option value="<?= $k['ID_JURUSAN']; ?>">
+                            <option value="<?= $k['ID_KELAS']; ?>">
                                 <?= $k['NM_KELAS']; ?>
                             </option>
                             <?php endforeach; ?>`
@@ -84,8 +84,8 @@
                             <th scope="col-1">No.</th>
                             <th scope="col-2">Angkatan</th>
                             <th scope="col-2">Jurusan</th>
+                            <th scope="col-2">Kelas</th>
                             <th scope="col-2">Nama</th>
-                            <th scope="col-2">Nisn</th>
                             <th scope="col-2">Nis</th>
                             <th scope="col-1">Aksi</th>
                         </tr>
@@ -97,9 +97,9 @@
                                 <td><?= $i++; ?></td>
                                 <td>2020/2021</td>
                                 <td>RPL</td>
+                                <td>X RPL 2</td>
                                 <td><?= $s['NM_SISWA']; ?></td>
-                                <td>098766</td>
-                                <td>19282736</td>
+                                <td><?= $s['NIS_SISWA']; ?></td>
                                 <td>
                                     <a href=""> <i class="fas fa-info-circle"></i></a>
                                     <a href=""><i class=" fas fa-edit"></i></a>
