@@ -91,13 +91,21 @@ class Siswa extends BaseController
         $jurusan = $this->jurusan->findAll();
         $kelas = $this->kelas->findAll();
         $siswa = $this->siswa->findAll();
+
+        $db = \Config\Database::connect();
+        $query   = $db->query("SELECT * FROM kelas WHERE ID_THNAJAR = $itahun AND ID_JURUSAN = $ijurusan");
+        $results = $query->getResultArray();
+
+        // $kelas1 = $this->kelas->where('ID_THNAJAR', $itahun)->where('ID_THNAJAR', $ijurusan)->findAll();
         $data = [
             'siswa' => $siswa,
             'kelas' => $kelas,
             'jurusan' => $jurusan,
             'tahunajar' => $tahunajar,
             'itahun' => $itahun,
-            'ijurusan' => $ijurusan
+            'ijurusan' => $ijurusan,
+            // 'kelas1' => $kelas1,
+            'kelas2' => $results
         ];
 
         return view('Siswa/ajax2', $data);

@@ -16,7 +16,7 @@
         </div>
         <div class="col-sm-7">
             <select class="form-control " id="tahun">
-                <option>Pilih Tahun Ajaran</option>
+                <option value="<?= null; ?>">Pilih Tahun Ajaran</option>
                 <?php foreach ($tahunajar as $a) : ?>
                     <option type='submit' value="<?= $a['ID_THNAJAR']; ?>"><?= $a['NM_THNAJAR']; ?></option>
                 <?php endforeach; ?>

@@ -9,7 +9,7 @@
         </div>
         <div class="col-sm-7">
             <select class="form-control " id="jurusan">
-                <option>Pilih Jurusan</option>
+                <option value="<?= null; ?>">Pilih Jurusan</option>
                 <?php foreach ($jurusan as $j) : ?>
                     <option value="<?= $j['ID_JURUSAN']; ?>"><?= $j['NM_JURUSAN']; ?></option>
                 <?php endforeach; ?>

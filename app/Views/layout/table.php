@@ -1,7 +1,5 @@
 <?php $this->renderSection('content') ?>
 
-<h3><?= 'tahun :' . @$itahun . 'jurusan :' . @$ijurusan . 'KElas :' . @$ikelas; ?></h3>
-
 <!-- membuat table -->
 <div class="kelas">
     <div style="height: 315px;overflow:scroll;">
@@ -57,3 +55,4 @@
         </table>
     </div>
 </div>
+<script src="/js/admin.js"></script>
