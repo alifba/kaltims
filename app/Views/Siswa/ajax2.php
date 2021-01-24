@@ -13,7 +13,6 @@
                     <?php endforeach; ?>`
             </select>
         </div>
-        <h3><?= 'tahun :' . @$itahun . 'jurusan :' . @$ijurusan . 'KElas :' . @$ikelas; ?></h3>
     </div>
 </form>
 <!--  -->
@@ -22,6 +21,7 @@
 
 <!-- membuat table -->
 <div class="kelas">
+    <h3><?= 'tahun :' . @$itahun . 'jurusan :' . @$ijurusan . 'KElas :' . @$ikelas; ?></h3>
     <div style="height: 315px;overflow:scroll;">
         <table class="table" style="height:100px;overflow:hidden;">
             <thead class="thead-dark">

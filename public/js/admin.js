@@ -8,16 +8,16 @@ $(document).ready(function(){
         window.location.href= '/Siswa';
     });
 
-    tahun = null;
-    kelas = null;
-    jurusan = null;
+    // tahun = 'null';
+    // kelas = 'null';
+    // jurusan = 'null';
 
     // tahun
     $('#tahun').on('change', function(){
         // window.location.href= '/Siswa';
         tahun = $('#tahun').val();
         
-        $('.tahun').load('/Siswa/ajax/'+tahun);
+        $('.tahun').load('/Siswa/ajax/'+tahun+'/');
     });
 
     // jurusan

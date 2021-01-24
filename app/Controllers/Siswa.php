@@ -68,7 +68,7 @@ class Siswa extends BaseController
         return view('Siswa/index', $data);
     }
 
-    public function ajax($itahun = null)
+    public function ajax($itahun)
     {
         $tahunajar = $this->tahunajar->findAll();
         $jurusan = $this->jurusan->findAll();
@@ -85,7 +85,7 @@ class Siswa extends BaseController
         return view('Siswa/ajax', $data);
     }
 
-    public function ajax2($itahun = null, $ijurusan = null)
+    public function ajax2($itahun, $ijurusan)
     {
         $tahunajar = $this->tahunajar->findAll();
         $jurusan = $this->jurusan->findAll();
@@ -103,7 +103,7 @@ class Siswa extends BaseController
         return view('Siswa/ajax2', $data);
     }
 
-    public function ajax3($itahun = null, $ijurusan = null, $ikelas = null)
+    public function ajax3($itahun, $ijurusan, $ikelas)
     {
         $tahunajar = $this->tahunajar->findAll();
         $jurusan = $this->jurusan->findAll();
