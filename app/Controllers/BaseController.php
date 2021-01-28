@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controllers;
 
 /**
@@ -28,6 +29,8 @@ class BaseController extends Controller
 	 */
 	protected $helpers = [];
 
+
+
 	/**
 	 * Constructor.
 	 */
@@ -42,5 +45,4 @@ class BaseController extends Controller
 		// E.g.:
 		// $this->session = \Config\Services::session();
 	}
-
 }

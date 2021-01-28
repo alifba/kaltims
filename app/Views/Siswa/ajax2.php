@@ -43,32 +43,6 @@
                     <th scope="col-1">Aksi</th>
                 </tr>
             </thead>
-            <tbody>
-                <?php $i = 1 ?>
-                <?php foreach ($siswa as $s) : ?>
-                    <tr>
-                        <td><?= $i++; ?></td>
-                        <?php if (@$itahun == null) : ?>
-                            <td>2020/2021</td>
-                        <?php endif; ?>
-
-                        <?php if (@$ijurusan == null) : ?>
-                            <td>jurusan</td>
-                        <?php endif; ?>
-
-                        <td>kelas</td>
-
-                        <td><?= $s['NM_SISWA']; ?></td>
-                        <td><?= $s['NIS_SISWA']; ?></td>
-                        <td>19282736</td>
-                        <td>
-                            <a href=""> <i class="fas fa-info-circle"></i></a>
-                            <a href=""><i class=" fas fa-edit"></i></a>
-                            <a href=""><i class="fas fa-trash-alt"></i>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
         </table>
     </div>
 </div>

@@ -17,6 +17,8 @@ use App\Models\statusModel;
 use App\Models\tahunajarModel;
 use mysqli;
 
+
+
 class Siswa extends BaseController
 {
     protected $angkatan;
@@ -32,6 +34,8 @@ class Siswa extends BaseController
     protected $siswalanjut;
     protected $status;
     protected $tahunajar;
+    protected $db;
+
 
     public function __construct()
     {
@@ -48,20 +52,16 @@ class Siswa extends BaseController
         $this->siswalanjut = new siswalanjutModel();
         $this->status = new statusModel();
         $this->tahunajar = new tahunajarModel();
+        $this->db = \Config\Database::connect();
     }
 
     public function index()
     {
-
-        $tahunajar = $this->tahunajar->findAll();
-        $jurusan = $this->jurusan->findAll();
-        $kelas = $this->kelas->findAll();
-        $siswa = $this->siswa->findAll();
+        $tahunajars =  $this->db->query("SELECT tahunajar.ID_THNAJAR, tahunajar.NM_THNAJAR
+        FROM tahunajar");
+        $tahunajar = $tahunajars->getResultArray();
 
         $data = [
-            'siswa' => $siswa,
-            'kelas' => $kelas,
-            'jurusan' => $jurusan,
             'tahunajar' => $tahunajar,
             'title' => 'Daftar siswa'
         ];
@@ -72,11 +72,7 @@ class Siswa extends BaseController
     {
         $tahunajar = $this->tahunajar->findAll();
         $jurusan = $this->jurusan->findAll();
-        $kelas = $this->kelas->findAll();
-        $siswa = $this->siswa->findAll();
         $data = [
-            'siswa' => $siswa,
-            'kelas' => $kelas,
             'jurusan' => $jurusan,
             'tahunajar' => $tahunajar,
             'itahun' => $itahun
@@ -90,21 +86,17 @@ class Siswa extends BaseController
         $tahunajar = $this->tahunajar->findAll();
         $jurusan = $this->jurusan->findAll();
         $kelas = $this->kelas->findAll();
-        $siswa = $this->siswa->findAll();
 
-        $db = \Config\Database::connect();
-        $query   = $db->query("SELECT * FROM kelas WHERE ID_THNAJAR = $itahun AND ID_JURUSAN = $ijurusan");
+        $query   = $this->db->query("SELECT * FROM kelas WHERE ID_THNAJAR = $itahun AND ID_JURUSAN = $ijurusan");
         $results = $query->getResultArray();
 
         // $kelas1 = $this->kelas->where('ID_THNAJAR', $itahun)->where('ID_THNAJAR', $ijurusan)->findAll();
         $data = [
-            'siswa' => $siswa,
-            'kelas' => $kelas,
-            'jurusan' => $jurusan,
             'tahunajar' => $tahunajar,
+            'jurusan' => $jurusan,
+            'kelas' => $kelas,
             'itahun' => $itahun,
             'ijurusan' => $ijurusan,
-            // 'kelas1' => $kelas1,
             'kelas2' => $results
         ];
 
@@ -128,6 +120,11 @@ class Siswa extends BaseController
         ];
 
         return view('Siswa/ajax3', $data);
+    }
+
+    public function detail()
+    {
+        return view('Siswa/detail');
     }
 
     //--------------------------------------------------------------------

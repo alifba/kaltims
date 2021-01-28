@@ -15,29 +15,29 @@ que_jumlahjurusanpertahun > jumlah jurusan
 select count(id_jurusan) as jumjurusan
 from (SELECT jurusan.ID_JURUSAN, jurusan.NM_JURUSAN, jurusan.SING_JURUSAN, tahunajar.ID_THNAJAR, tahunajar.NM_THNAJAR
 FROM jurusan, tahunajar
-where tahunajar.ID_THNAJAR=1);
+where tahunajar.ID_THNAJAR=$itahun);
 
 queb_boxkelasjurtahun > combo box pilih kelas dr tahun dan jurusan yg sdh dipilih
 SELECT kelas.ID_KELAS, kelas.NM_KELAS, kelas.NM_GRADE, jurusan.ID_JURUSAN, jurusan.NM_JURUSAN, jurusan.SING_JURUSAN, tahunajar.ID_THNAJAR, tahunajar.NM_THNAJAR
 FROM tahunajar INNER JOIN (jurusan INNER JOIN kelas ON jurusan.ID_JURUSAN = kelas.ID_JURUSAN) ON tahunajar.ID_THNAJAR = kelas.ID_THNAJAR
-where tahunajar.ID_THNAJAR=1 and jurusan.ID_JURUSAN=1;
+where tahunajar.ID_THNAJAR=$itahun and jurusan.ID_JURUSAN=$ijurusan;
 
 que_jumlahkelasperjurpertahun > jumlah kelas
 select count(id_kelas) as jumkelas
 from (SELECT kelas.ID_KELAS, kelas.NM_KELAS, kelas.NM_GRADE, jurusan.ID_JURUSAN, jurusan.NM_JURUSAN, jurusan.SING_JURUSAN, tahunajar.ID_THNAJAR, tahunajar.NM_THNAJAR
 FROM tahunajar INNER JOIN (jurusan INNER JOIN kelas ON jurusan.ID_JURUSAN = kelas.ID_JURUSAN) ON tahunajar.ID_THNAJAR = kelas.ID_THNAJAR
-where tahunajar.ID_THNAJAR=1 and jurusan.ID_JURUSAN=1);
+where tahunajar.ID_THNAJAR=$itahun and jurusan.ID_JURUSAN=$ijurusan);
 
 queb_tabelsiswa
 SELECT tahunajar.ID_THNAJAR, tahunajar.NM_THNAJAR, jurusan.ID_JURUSAN, jurusan.NM_JURUSAN, jurusan.SING_JURUSAN, kelas.ID_KELAS, kelas.NM_KELAS, kelas.NM_GRADE, kelas.ID_THNAJAR, kelas.ID_JURUSAN, kelassiswa.ID_MUTASI, kelassiswa.TGL_MUTASI, siswa.ID_SISWA, siswa.NIS_SISWA, siswa.NM_SISWA, siswa.GENDER_SISWA, siswa.EMAIL_SISWA, siswa.AGAMA_SISWA, siswa.TMPLAHIR_SISWA, siswa.TGLLAHIR_SISWA, siswa.TGL_DITERIMA, siswa.GRADE_DITERIMA, siswa.TGL_KELUAR, siswa.GRADE_KELUAR, siswa.KET_KELUAR, siswa.NM_IBU, siswa.NM_AYAH, siswa.ANAK_KE, siswa.ALAMAT_SISWA, siswa.ALAMAT_ORTU, siswa.KERJA_AYAH, siswa.DETAIL_KERJA_AYAH, siswa.KERJA_IBU, siswa.DETAIL_KERJA_IBU, siswa.ASAL_SEKOLAH, siswa.JENIS_ASAL_SEKOLAH, siswa.NO_IJAZAH_ASAL, siswa.POTO_SISWA, siswa.SCAN_IJZH_SMP, siswa.SCAN_IJZH_SMK, siswa.SCAN_KARTUPLJR
 FROM siswa INNER JOIN ((tahunajar INNER JOIN (jurusan INNER JOIN kelas ON jurusan.ID_JURUSAN = kelas.ID_JURUSAN) ON tahunajar.ID_THNAJAR = kelas.ID_THNAJAR) INNER JOIN kelassiswa ON kelas.ID_KELAS = kelassiswa.ID_KELAS) ON siswa.ID_SISWA = kelassiswa.ID_SISWA
-where tahunajar.ID_THNAJAR=1 and jurusan.ID_JURUSAN=1 and kelas.ID_KELAS=2;
+where tahunajar.ID_THNAJAR=$itahun and jurusan.ID_JURUSAN=$ijurusan and kelas.ID_KELAS=$ikelas;
 
 que_jumsiswaperkelasperjurpertahun
 select count(id_siswa) as jumsiswa
 from(SELECT tahunajar.ID_THNAJAR, tahunajar.NM_THNAJAR, jurusan.ID_JURUSAN, jurusan.NM_JURUSAN, jurusan.SING_JURUSAN, kelas.ID_KELAS, kelas.NM_KELAS, kelas.NM_GRADE, kelas.ID_THNAJAR, kelas.ID_JURUSAN, kelassiswa.ID_MUTASI, kelassiswa.TGL_MUTASI, siswa.ID_SISWA, siswa.NIS_SISWA, siswa.NM_SISWA, siswa.GENDER_SISWA, siswa.EMAIL_SISWA, siswa.AGAMA_SISWA, siswa.TMPLAHIR_SISWA, siswa.TGLLAHIR_SISWA, siswa.TGL_DITERIMA, siswa.GRADE_DITERIMA, siswa.TGL_KELUAR, siswa.GRADE_KELUAR, siswa.KET_KELUAR, siswa.NM_IBU, siswa.NM_AYAH, siswa.ANAK_KE, siswa.ALAMAT_SISWA, siswa.ALAMAT_ORTU, siswa.KERJA_AYAH, siswa.DETAIL_KERJA_AYAH, siswa.KERJA_IBU, siswa.DETAIL_KERJA_IBU, siswa.ASAL_SEKOLAH, siswa.JENIS_ASAL_SEKOLAH, siswa.NO_IJAZAH_ASAL, siswa.POTO_SISWA, siswa.SCAN_IJZH_SMP, siswa.SCAN_IJZH_SMK, siswa.SCAN_KARTUPLJR
 FROM siswa INNER JOIN ((tahunajar INNER JOIN (jurusan INNER JOIN kelas ON jurusan.ID_JURUSAN = kelas.ID_JURUSAN) ON tahunajar.ID_THNAJAR = kelas.ID_THNAJAR) INNER JOIN kelassiswa ON kelas.ID_KELAS = kelassiswa.ID_KELAS) ON siswa.ID_SISWA = kelassiswa.ID_SISWA
-where tahunajar.ID_THNAJAR=1 and jurusan.ID_JURUSAN=1 and kelas.ID_KELAS=2)
+where tahunajar.ID_THNAJAR=$itahun and jurusan.ID_JURUSAN=$ijurusan and kelas.ID_KELAS=$ikelas)
 
 
 que_detailsiswaaktif
