@@ -30,11 +30,6 @@
             <div class="col-sm-7">
                 <select class="form-control " id="kelas" name="kelas">
                     <option>Pilih kelas</option>
-                    <?php foreach ($kelas as $k) : ?>
-                        <option value="<?= $k['ID_KELAS']; ?>">
-                            <?= $k['NM_KELAS']; ?>
-                        </option>
-                        <?php endforeach; ?>`
                 </select>
             </div>
         </div>
@@ -49,18 +44,16 @@
         <table class="table" style="height:100px;overflow:hidden;">
             <thead class="thead-dark">
                 <tr>
-                    <th scope="col-1">No.</th>
-                    <?php if ($itahun == null) : ?>
-                        <th scope="col-2">Angkatan</th>
-                    <?php endif; ?>
+                    <th scope="col-sm-1">No.</th>
+                    <th scope="col-sm-2">Angkatan</th>
 
-                    <th scope="col-2">Jurusan</th>
+                    <th scope="col-sm-2">Jurusan</th>
 
-                    <th scope="col-2">Kelas</th>
+                    <th scope="col-sm-2">Kelas</th>
 
-                    <th scope="col-2">Nama</th>
-                    <th scope="col-2">Nis</th>
-                    <th scope="col-1">Aksi</th>
+                    <th scope="col-sm-2">Nama</th>
+                    <th scope="col-sm-2">Nis</th>
+                    <th scope="col-sm-1">Aksi</th>
                 </tr>
             </thead>
         </table>

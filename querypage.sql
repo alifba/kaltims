@@ -9,7 +9,7 @@ FROM tahunajar;
 queb_boxjurusantahun > combo box pilih jurusan dr tahun yg sdh dipilih
 SELECT jurusan.ID_JURUSAN, jurusan.NM_JURUSAN, jurusan.SING_JURUSAN, tahunajar.ID_THNAJAR, tahunajar.NM_THNAJAR
 FROM jurusan, tahunajar
-where tahunajar.ID_THNAJAR=1;
+where tahunajar.ID_THNAJAR=$itahun;
 
 que_jumlahjurusanpertahun > jumlah jurusan
 select count(id_jurusan) as jumjurusan
